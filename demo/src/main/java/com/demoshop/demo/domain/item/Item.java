@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.demoshop.demo.domain.Category;
+import com.demoshop.demo.exception.NotEnoughStockException;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorColumn;
@@ -32,4 +33,18 @@ public abstract class Item {
 
     @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<>();
+
+    //==비즈니스 로직==//
+    public void addStock(int quantity){
+        this.stockQuantity += quantity;
+    }
+
+    public void removeStock(int quantity){
+        int restStock = stockQuantity - quantity;
+        if(restStock < 0){
+            throw new NotEnoughStockException("재고 수량이 부족합니다.");
+        }
+        this.stockQuantity = restStock;
+    }
+
 }
