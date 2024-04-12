@@ -9,15 +9,11 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.demoshop.demo.domain.Member;
-import com.demoshop.demo.repository.MemberRepository;
 
 @SpringBootTest
 @Transactional
 @ActiveProfiles("test")
 public class MemberServiceTest {
-
-    @Autowired
-    private MemberRepository memberRepository;
 
     @Autowired
     private MemberService memberService;

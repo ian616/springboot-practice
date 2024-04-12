@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.demoshop.demo.domain.Member;
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 
 @Repository

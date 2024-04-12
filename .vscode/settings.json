@@ -1,4 +1,5 @@
 {
     "java.compile.nullAnalysis.mode": "automatic",
     "workbench.editor.enablePreview": false,
+    "workbench.colorTheme": "Material Theme",
 }
